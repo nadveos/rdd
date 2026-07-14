@@ -1,0 +1,9 @@
+/* src/App.css */
+#main-content {
+  /* No top padding — Hero section handles its own spacing with fixed navbar */
+}
+
+/* Ensure no horizontal overflow */
+* {
+  box-sizing: border-box;
+}

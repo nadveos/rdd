@@ -1,0 +1,352 @@
+/* ================================================
+   RAÚL DOMINGO — Design System Global
+   "Folklore de Vanguardia / Chulo-Gaucho"
+   ================================================ */
+
+/* --- CUSTOM PROPERTIES (Design Tokens) --- */
+:root {
+  /* Paleta de Colores */
+  --color-bg:           #FBF9F6;  /* Lino Crudo — fondo principal */
+  --color-card:         #F5F2EB;  /* Blanco Lino — tarjetas */
+  --color-adobe:        #8E4F32;  /* Marrón Adobe / Terracota — acento primario */
+  --color-adobe-light:  #B8755A;  /* Terracota clara — hover */
+  --color-adobe-dark:   #6B3A25;  /* Terracota oscura — active */
+  --color-monte:        #556B2F;  /* Verde Oliva — acento secundario */
+  --color-nocturno:     #1A1A1A;  /* Negro Mate — textos principales */
+  --color-nocturno-80:  rgba(26, 26, 26, 0.8);
+  --color-border:       rgba(26, 26, 26, 0.12);
+  --color-border-strong:rgba(26, 26, 26, 0.25);
+  --color-white-lino:   #F5F2EB;
+  --color-overlay:      rgba(26, 26, 26, 0.55);
+
+  /* Tipografía */
+  --font-title:  'Montserrat', sans-serif;
+  --font-body:   'Georgia', 'Times New Roman', serif;
+
+  /* Espaciado */
+  --section-py:      clamp(4rem, 8vw, 9rem);
+  --section-px:      clamp(1.25rem, 5vw, 3rem);
+  --container-max:   1240px;
+  --gap-sm:          0.75rem;
+  --gap-md:          1.5rem;
+  --gap-lg:          2.5rem;
+  --gap-xl:          4rem;
+
+  /* Bordes */
+  --radius-sm:  4px;
+  --radius-md:  8px;
+  --radius-full: 9999px;
+
+  /* Sombras */
+  --shadow-sm:  0 1px 4px rgba(0,0,0,0.08);
+  --shadow-md:  0 4px 16px rgba(0,0,0,0.10);
+  --shadow-lg:  0 12px 40px rgba(0,0,0,0.14);
+
+  /* Transiciones */
+  --transition-fast:   150ms ease;
+  --transition-base:   250ms ease;
+  --transition-slow:   400ms ease;
+}
+
+/* --- RESET --- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-bg);
+  color: var(--color-nocturno);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+img, video {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: inherit;
+}
+
+input, textarea, select {
+  font-family: inherit;
+}
+
+/* --- CONTENEDOR --- */
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: var(--section-px);
+}
+
+/* --- TIPOGRAFÍA BASE --- */
+h1, h2, h3, h4, h5 {
+  font-family: var(--font-title);
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+}
+
+h1 {
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+h2 {
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-size: clamp(2rem, 4vw, 3.25rem);
+}
+
+h3 {
+  font-weight: 700;
+  font-size: clamp(1.125rem, 2vw, 1.5rem);
+}
+
+h4 {
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+p {
+  font-family: var(--font-body);
+  line-height: 1.8;
+  color: var(--color-nocturno);
+}
+
+/* --- SECCIÓN BASE --- */
+.section {
+  padding-block: var(--section-py);
+}
+
+.section--card {
+  background-color: var(--color-card);
+}
+
+.section--dark {
+  background-color: var(--color-nocturno);
+  color: var(--color-bg);
+}
+
+.section--dark p,
+.section--dark h2,
+.section--dark h3 {
+  color: var(--color-bg);
+}
+
+/* Eyebrow / Pretítulo */
+.eyebrow {
+  font-family: var(--font-title);
+  font-weight: 600;
+  font-size: 0.75rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-adobe);
+  display: block;
+  margin-bottom: 0.75rem;
+}
+
+/* Línea decorativa antes de H2 */
+.section-header {
+  margin-bottom: var(--gap-xl);
+}
+
+.section-header__line {
+  width: 48px;
+  height: 2px;
+  background: var(--color-adobe);
+  margin-bottom: 1rem;
+}
+
+.section-header--center {
+  text-align: center;
+}
+
+.section-header--center .section-header__line {
+  margin-inline: auto;
+}
+
+/* --- BOTONES --- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-title);
+  font-weight: 700;
+  font-size: 0.8125rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border-radius: var(--radius-sm);
+  padding: 0.875rem 2rem;
+  transition: all var(--transition-base);
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.btn--primary {
+  background-color: var(--color-adobe);
+  color: var(--color-white-lino);
+  border: 2px solid var(--color-adobe);
+}
+
+.btn--primary:hover {
+  background-color: var(--color-adobe-dark);
+  border-color: var(--color-adobe-dark);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn--primary:active {
+  transform: translateY(0);
+}
+
+.btn--outline {
+  background-color: transparent;
+  color: var(--color-nocturno);
+  border: 2px solid var(--color-nocturno);
+}
+
+.btn--outline:hover {
+  background-color: var(--color-nocturno);
+  color: var(--color-bg);
+  transform: translateY(-2px);
+}
+
+.btn--outline-light {
+  background-color: transparent;
+  color: var(--color-bg);
+  border: 2px solid var(--color-bg);
+}
+
+.btn--outline-light:hover {
+  background-color: var(--color-bg);
+  color: var(--color-nocturno);
+}
+
+.btn--sm {
+  padding: 0.5rem 1.25rem;
+  font-size: 0.75rem;
+}
+
+/* --- CARDS --- */
+.card {
+  background-color: var(--color-card);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* --- INPUTS --- */
+.input, .textarea, .select {
+  width: 100%;
+  background-color: var(--color-bg);
+  border: 1.5px solid var(--color-border-strong);
+  border-radius: var(--radius-sm);
+  padding: 0.875rem 1rem;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: var(--color-nocturno);
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+  outline: none;
+}
+
+.input:focus, .textarea:focus, .select:focus {
+  border-color: var(--color-adobe);
+  box-shadow: 0 0 0 3px rgba(142, 79, 50, 0.15);
+}
+
+.textarea {
+  min-height: 140px;
+  resize: vertical;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+}
+
+.form-label {
+  font-family: var(--font-title);
+  font-weight: 600;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-nocturno);
+}
+
+/* --- UTILITIES --- */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  border: 0;
+}
+
+.text-adobe { color: var(--color-adobe); }
+.text-monte { color: var(--color-monte); }
+.bg-card { background-color: var(--color-card); }
+
+/* --- FADE-IN ANIMATION (IntersectionObserver) --- */
+.fade-in {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.65s ease, transform 0.65s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger delays */
+.fade-in--delay-1 { transition-delay: 0.1s; }
+.fade-in--delay-2 { transition-delay: 0.2s; }
+.fade-in--delay-3 { transition-delay: 0.3s; }
+.fade-in--delay-4 { transition-delay: 0.4s; }
+
+/* --- SCROLLBAR --- */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: var(--color-bg); }
+::-webkit-scrollbar-thumb { background: var(--color-adobe); border-radius: 4px; }
+
+/* --- RESPONSIVE --- */
+@media (max-width: 768px) {
+  :root {
+    --section-py: clamp(3rem, 10vw, 5rem);
+  }
+}

@@ -1,0 +1,131 @@
+/* src/components/Giras/Giras.css */
+.giras {
+  background-color: var(--color-bg);
+}
+
+.giras__list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border-top: 1.5px solid var(--color-border);
+}
+
+/* Show row */
+.show-row {
+  display: grid;
+  grid-template-columns: 120px 1fr auto;
+  align-items: center;
+  gap: 1.5rem 2rem;
+  padding: 1.75rem 1.25rem;
+  border-bottom: 1px solid var(--color-border);
+  transition: background var(--transition-fast);
+  border-radius: var(--radius-sm);
+}
+
+.show-row:hover {
+  background: var(--color-card);
+}
+
+/* Date column */
+.show-row__date {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.show-row__day {
+  font-family: var(--font-title);
+  font-weight: 900;
+  font-size: clamp(2rem, 4vw, 2.75rem);
+  color: var(--color-adobe);
+  line-height: 1;
+}
+
+.show-row__month-year {
+  font-family: var(--font-title);
+  font-weight: 600;
+  font-size: 0.6875rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-nocturno);
+  opacity: 0.6;
+  margin-top: 0.125rem;
+}
+
+/* Venue column */
+.show-row__venue-col {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.show-row__venue {
+  font-family: var(--font-title);
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--color-nocturno);
+}
+
+.show-row__location {
+  font-family: var(--font-body);
+  font-size: 0.9375rem;
+  font-style: italic;
+  color: var(--color-nocturno);
+  opacity: 0.65;
+}
+
+/* Badge sold out */
+.show-row__sold-out {
+  font-family: var(--font-title);
+  font-weight: 700;
+  font-size: 0.6875rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-monte);
+  border: 1.5px solid var(--color-monte);
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--radius-sm);
+  white-space: nowrap;
+}
+
+/* Actions column */
+.show-row__actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.giras__empty {
+  padding: 4rem 0;
+  text-align: center;
+  font-family: var(--font-body);
+  font-style: italic;
+  color: var(--color-nocturno);
+  opacity: 0.5;
+}
+
+@media (max-width: 768px) {
+  .show-row {
+    grid-template-columns: 80px 1fr;
+    grid-template-rows: auto auto;
+  }
+
+  .show-row__actions {
+    grid-column: 1 / -1;
+  }
+
+  .show-row__day { font-size: 2rem; }
+}
+
+@media (max-width: 480px) {
+  .show-row {
+    grid-template-columns: 1fr;
+    padding: 1.25rem 0.75rem;
+  }
+
+  .show-row__date {
+    flex-direction: row;
+    align-items: baseline;
+    gap: 0.5rem;
+  }
+}

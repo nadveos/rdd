@@ -1,0 +1,59 @@
+/* src/components/Press/Press.css */
+.press {
+  background-color: var(--color-bg);
+}
+
+.press__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.press-card {
+  background: var(--color-card);
+  border-radius: var(--radius-sm);
+  padding: 2rem 1.75rem;
+  border-left: 3px solid var(--color-adobe);
+  position: relative;
+}
+
+.press-card__quote-mark {
+  font-family: var(--font-title);
+  font-size: 4rem;
+  line-height: 0.8;
+  color: var(--color-adobe);
+  opacity: 0.35;
+  margin-bottom: 0.75rem;
+  display: block;
+  font-weight: 900;
+}
+
+.press-card__text {
+  font-family: var(--font-body);
+  font-style: italic;
+  font-size: 1.0625rem;
+  line-height: 1.75;
+  color: var(--color-nocturno);
+  margin-bottom: 1.25rem;
+}
+
+.press-card__source {
+  font-family: var(--font-title);
+  font-weight: 700;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-adobe);
+}
+
+.press-card__author {
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  color: var(--color-nocturno);
+  opacity: 0.55;
+  margin-top: 0.125rem;
+}
+
+@media (max-width: 600px) {
+  .press__grid { grid-template-columns: 1fr; }
+}
