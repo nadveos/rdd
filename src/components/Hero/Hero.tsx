@@ -9,8 +9,8 @@ interface HeroProps {
 
 export default function Hero({
   title   = 'Raúl\nDomingo',
-  claim   = 'Desde las quebradas de Salta\nal mundo.',
-  imageUrl = '/hero.png',
+  claim   = 'Desde las valles de Salta\nal mundo.',
+  imageUrl = '/hero-1.png',
 }: HeroProps) {
   const [first, second] = title.split('\n');
 

@@ -9,7 +9,7 @@ interface AboutProps {
 }
 
 export default function About({
-  imageUrl = '/about.png',
+  imageUrl = '/about-3.png',
   text,
   pullquote = '"El folklore no es un museo — es una lengua viva que respira con cada generación."',
 }: AboutProps) {
